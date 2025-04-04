@@ -48,7 +48,7 @@
 - Multiclass Example
 - Is the model overfit?
 
-## **processin third file (multiclass_Reuters.ipynb):**
+## **process in third file (multiclass_Reuters.ipynb):**
 - classify Reuters newswires into 6 mutually exclusive topics
 - instance of single-label multiclass classification. If each data point could belong to multiple categories (in this case, topics), we’d be facing a multilabel multiclass classification problem.
 
@@ -78,6 +78,50 @@
 - If you need to classify data into a large number of categories, you should avoid creating information bottlenecks in your model due to intermediate layers that are too small.
 
 
+## **process in the 4th file(multiclass_iris.ipynb)**
+### Iris dataset
+- extract input and output columns
+- encode class values as integers
+- Define The Neural Network Model
+- accuract and loss
+
+ ## **Process in the 5th fiel (multiclass_mnist.ipynb)**
+ 
+- #### Load the dataset
+**tf.keras** provides a set of convenience functions for loading well-known datasets. Each of these convenience functions does the following:
+
+Loads both the training set and the test set.
+Separates each set into features and labels.
+The relevant convenience function for MNIST is called **mnist.load_data()**:
+- View the dataset
+- Task 1: Normalize feature values
+- Define a plotting function
+- Invoke the previous functions
+- Task 2: Optimize the model
+
+## **Process in the 6th file (timeseries.ipynb)**
+
+- Other things we can do with time series
+- Classification—Assign one or more categorical labels to a timeseries. For instance, given the timeseries of the activity of a visitor on a website, classify whether the visitor is a bot or a human.
+- Event detection—Identify the occurrence of a specific expected event within a continuous data stream. A particularly useful application is “hotword detection,” where a model monitors an audio stream and detects utterances like “Ok Google” or “Hey Alexa.”
+- Anomaly detection—Detect anything unusual happening within a continuous datastream. Unusual activity on your corporate network? Might be an attacker. Unusual readings on a manufacturing line? Time for a human to go take a look. Anomaly detection is typically done via unsupervised learning, because you often don’t know what kind of anomaly you’re looking for, so you can’t train on specific anomaly examples.
+- **climate dataset**
+- Preparing the data
+given data covering the previous five days and sampled once per hour, can we predict the temperature in 24 hours?
+
+the data is already numerical, so you don’t need to do any vectorization
+
+But each timeseries in the data is on a different scale (for example, atmospheric pressure, measured in mbar, is around 1,000, while H2OC, measured in millimoles per mole, is around 3). We’ll normalize each timeseries independently so that they all take small values on a similar scale. We’re going to use the first 210,225 timesteps as training data, so we’ll compute the mean and standard deviation only on this fraction of the data.
+
+-Sampling the data
+-Predict last value
+- basic machine learning model
+a fully connected model that starts by flattening the data and then runs it through two Dense layers.
+Note the lack of an activation function on the last Dense layer, which is typical for a regression problem.
+We use mean squared error (MSE) as the loss, rather than MAE, because unlike MAE, it’s smooth around zero, which is a useful property for gradient descent. We will monitor MAE by adding it as a metric in compile().
+
+-**try a 1D convolutional model**
+ -A first recurrent baseline
+- Simple LSTM examplem
 
 
-- 
